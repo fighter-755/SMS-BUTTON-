@@ -3,49 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Links with CSS</title>
+    <title>Profile Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
+            margin: 0;
+            padding: 0;
             background-color: #222;
+            overflow-y: auto;
         }
-        h1 {
-            color: #333;
+
+        .profile-header {
+            text-align: center;
+            background-color: #222;
+            padding-bottom: 20px;
+            box-shadow: 0 0 15px red;
         }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 15px 30px;
-            margin: 10px;
+
+        .cover-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .profile-details {
+            margin-top: -50px;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+        }
+
+        .name {
+            margin: 10px 0 5px;
+            font-size: 24px;
+            color: red;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .profile-content {
+            margin: 20px auto;
+            max-width: 600px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 15px red;
+            overflow: hidden;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background: #222;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu button {
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            background: none;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            color: red;
+        }
+
+        .menu button:hover {
+            background: #333;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .post {
+            background: #333;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px cyan;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .post img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post .post-content {
+            flex-grow: 1;
+        }
+
+        .post .post-content .name {
+            font-size: 16px;
+            color: red;
+            margin: 0;
+        }
+
+        .post .post-content p {
+            color: cyan;
+            margin: 5px 0 0;
+        }
+
+        .post .post-content span {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: red;
+        }
+
+        .close-button {
+            display: block;
+            margin: 10px 0;
+            padding: 5px 10px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .close-button:hover {
+            background-color: darkred;
+        }
+
+        .social-buttons {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .social-buttons a {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 15px #222;
+            box-shadow: 0 0 15px red;
             overflow-y: auto;
             position: relative;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .whatsapp {
-            background-color: #25d366;
-        }
-        .whatsapp:hover {
-            background-color: #1da851;
+
+        .social-buttons a:hover {
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <h1 class="mb-3" style="color: cyan;">ᴄʜᴏᴏꜱᴇ ᴏᴘꜱᴛɪᴏɴ</h1>
-      <button onclick="window.open('https://www.facebook.com', '_blank')">ɢᴏ ʙᴀᴄᴋ</button>
-    <button onclick="window.open('https://www.facebook.com', '_blank')">ʜᴀᴄᴋ ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴅ</button>
-    <button class="whatsapp" onclick="window.open('https://wa.me/917318018572', '_blank')">ᴘᴜʀᴄʜᴇꜱᴇ ᴄᴏɴᴛᴇᴄᴛ ᴀᴅᴍɪɴ</button>
-        <h1 class="mb-3" style="color: cyan;">ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴅ ᴋᴀʀɴᴇ ᴋᴇ ʟɪʏᴇ ᴘᴀꜱꜱᴡᴏʀᴅ ᴋɪ ᴊᴀʀᴜʀᴛ ᴘᴀᴅᴇɢɪ ᴘᴜʀᴄʜᴇꜱᴇ ᴋᴀʀ ʟᴇ ᴘᴀꜱꜱᴡᴏʀᴅ ᴀᴅᴍɪɴ ꜱᴇ ᴍɪʟ ᴊᴀʏᴇɢᴀ ? </h1>
-    
+    <div class="profile-header">
+        <div class="cover-photo">
+            <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Cover Photo">
+        </div>
+        <div class="profile-details">
+            <img class="profile-picture" src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Picture">
+            <h1 class="name">ᴄʏʙᴇʀ ᴛᴇᴀᴍ ( ᴀʙʜɪ ʏᴀᴅᴀᴠ )</h1>
+            <p class="bio">हिंदू युवा सेना
+            𝐓𝐞𝐚𝐦 __ 585 :3)'
+            ⟶🧡__सनातनी___ 🦋🔐☘️
+            ° ¬ 𝐊ı𝐬ıı𝐰 𝐤ıı 𝐉αα𝐧 𝐧α𝐡ıı 🙂 -</p>
+        </div>
+    </div>
+    <div class="profile-content">
+        <div class="menu">
+            <button onclick="showPosts()">Posts</button>
+            <button onclick="showAbout()">About</button>
+            <button onclick="showGroups()">Groups</button>
+            <button>Photos</button>
+        </div>
+        <div class="content" id="content">
+            <h2>ᴜᴘᴅᴀᴛᴇ</h2>
+            <div class="post">
+                <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Picture">
+                <div class="post-content">
+                    <h4 class="name">ᴄʏʙᴇʀ ᴛᴇᴀᴍ ( ᴀʙʜɪ ʏᴀᴅᴀᴠ )</h4>
+                    <p>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴘʀᴏꜰɪʟᴇ 💞</p>
+                    <span>2 hours ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="social-buttons" id="social-buttons">
+            <a href="https://www.youtube.com/@Abhi_tricker" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/_broken_heart755" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/youtuber755" target="_blank">Facebook</a>
+            <a href="https://wa.me/+917318018572" target="_blank">WhatsApp</a>
+            <button class="close-button" onclick="closeAbout()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPosts() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+                <h2>Posts</h2>
+                <div class="post">
+                    <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Picture">
+                    <div class="post-content">
+                        <h4 class="name">ᴄʏʙᴇʀ ᴛᴇᴀᴍ ( ᴀʙʜɪ ʏᴀᴅᴀᴠ )</h4>
+                        <p>ʜᴇʟʟᴏ ɢᴜʏꜱ ᴇɴᴊᴏʏ ᴋᴀʀᴏ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ 🍿💔</p>
+                        <span>Nov 15</span>
+                    </div>
+                </div>
+                <button class="close-button" onclick="closePosts()">Close</button>
+            `;
+        }
+
+        function closePosts() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+                <h2>ᴜᴘᴅᴀᴛᴇ</h2>
+                <div class="post">
+                    <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Picture">
+                    <div class="post-content">
+                        <h4 class="name">ᴄʏʙᴇʀ ᴛᴇᴀᴍ ( ᴀʙʜɪ ʏᴀᴅᴀᴠ )</h4>
+                        <p>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴘʀᴏꜰɪʟᴇ 💞</p>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showAbout() {
+            const socialButtons = document.getElementById("social-buttons");
+            socialButtons.style.display = "block";
+        }
+
+        function closeAbout() {
+            const socialButtons = document.getElementById("social-buttons");
+            socialButtons.style.display = "none";
+        }
+
+        function showGroups() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+                <h2>Groups</h2>
+
+            `;
+        }
+
+        function closeGroups() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `
+                <h2>ᴜᴘᴅᴀᴛᴇ</h2>
+                <div class="post">
+                    <img src="https://i.ibb.co/DrGgD0Z/50894529e2643cf797e68819bf14ddfb.jpg" alt="Profile Picture">
+                    <div class="post-content">
+                        <h4 class="name">ᴄʏʙᴇʀ ᴛᴇᴀᴍ ( ᴀʙʜɪ ʏᴀᴅᴀᴠ )</h4>
+                        <p>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴘʀᴏꜰɪʟᴇ 💞</p>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function group1() {
+            alert("Group 1 selected!");
+        }
+
+        function group2() {
+            alert("Group 2 selected!");
+        }
+    </script>
 </body>
 </html>
